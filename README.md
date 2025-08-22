@@ -54,5 +54,96 @@ This project is a full-stack web application that replicates the core functional
 | **HTML5/CSS3** | Structure and styling of web pages |
 | **Git/GitHub** | Version control and collaboration platform |
 
+## Database Design
+
+### Key Entities
+
+#### 1. Users
+**Important Fields:**
+- `_id`: Unique identifier (ObjectId)
+- `email`: Unique email address for authentication
+- `password`: Hashed password for security
+- `firstName` & `lastName`: User's full name
+- `role`: User type (host, guest, or admin)
+
+**Relationships:**
+- A User can have multiple Properties (as a host)
+- A User can make multiple Bookings (as a guest)
+- A User can write multiple Reviews
+- A User can receive multiple Reviews (as a host)
+
+#### 2. Properties
+**Important Fields:**
+- `_id`: Unique identifier (ObjectId)
+- `title`: Property name/title
+- `description`: Detailed property description
+- `pricePerNight`: Rental price per night
+- `hostId`: Reference to User who owns the property
+- `location`: Address and geographic coordinates
+
+**Relationships:**
+- A Property belongs to one User (host)
+- A Property can have multiple Bookings
+- A Property can have multiple Reviews
+- A Property can have multiple Amenities
+
+#### 3. Bookings
+**Important Fields:**
+- `_id`: Unique identifier (ObjectId)
+- `propertyId`: Reference to the booked Property
+- `guestId`: Reference to User making the booking
+- `checkInDate`: Start date of booking
+- `checkOutDate`: End date of booking
+- `totalPrice`: Calculated total cost
+- `status`: Booking status (pending, confirmed, cancelled)
+
+**Relationships:**
+- A Booking belongs to one Property
+- A Booking belongs to one User (guest)
+- A Booking can have one associated Payment
+- A Booking can have one Review
+
+#### 4. Reviews
+**Important Fields:**
+- `_id`: Unique identifier (ObjectId)
+- `propertyId`: Reference to the reviewed Property
+- `authorId`: Reference to User writing the review
+- `rating`: Numerical rating (1-5 stars)
+- `comment`: Text review content
+- `createdAt`: Timestamp of review creation
+
+**Relationships:**
+- A Review belongs to one Property
+- A Review belongs to one User (author)
+- A Review can be associated with one Booking
+
+#### 5. Payments
+**Important Fields:**
+- `_id`: Unique identifier (ObjectId)
+- `bookingId`: Reference to associated Booking
+- `amount`: Payment amount
+- `paymentMethod`: Credit card, PayPal, etc.
+- `status`: Payment status (pending, completed, failed)
+- `transactionId`: Unique transaction identifier
+
+**Relationships:**
+- A Payment belongs to one Booking
+- A Payment is processed for one User (guest)
+
+#### 6. Amenities (Additional Entity)
+**Important Fields:**
+- `_id`: Unique identifier (ObjectId)
+- `name`: Amenity name (WiFi, Pool, Kitchen, etc.)
+- `icon`: Visual representation icon
+
+**Relationships:**
+- Many Properties can have many Amenities (many-to-many relationship)
+
+### Database Relationships Summary
+- **One-to-Many**: User → Properties, User → Bookings, User → Reviews
+- **One-to-Many**: Property → Bookings, Property → Reviews
+- **One-to-One**: Booking → Payment, Booking → Review
+- **Many-to-Many**: Properties ↔ Amenities
+
 ## Getting Started
 (Instructions will be added as the project progresses)
