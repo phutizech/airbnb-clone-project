@@ -233,5 +233,59 @@ This feature sends email and in-app notifications for booking confirmations, mes
 - **Database encryption** at rest and in transit
 - **API key rotation** and secure storage
 
+## CI/CD Pipeline
+
+### What is CI/CD?
+CI/CD (Continuous Integration and Continuous Deployment) is a modern software development practice that automates the process of integrating code changes, testing them, and deploying them to production environments. CI focuses on automatically building and testing code changes, while CD automates the deployment of validated changes to various environments.
+
+### Importance for the Project
+
+#### Continuous Integration Benefits:
+- **Early Bug Detection**: Automated testing catches issues immediately after code changes are committed
+- **Code Quality Maintenance**: Ensures consistent code standards and prevents integration conflicts
+- **Faster Development Cycles**: Enables frequent, small commits without breaking the application
+- **Team Collaboration**: Allows multiple developers to work simultaneously without conflicts
+
+#### Continuous Deployment Benefits:
+- **Rapid Delivery**: Automates the deployment process to staging and production environments
+- **Reduced Manual Errors**: Eliminates human error in deployment procedures
+- **Consistent Environments**: Ensures development, testing, and production environments are identical
+- **Quick Rollbacks**: Enables fast recovery in case of deployment issues
+
+### CI/CD Tools for This Project
+
+#### Version Control & CI Platform:
+- **GitHub Actions**: Native CI/CD integration with GitHub repositories for automated workflows
+- **GitHub**: Primary version control system for code management and collaboration
+
+#### Containerization:
+- **Docker**: Containerization platform for creating consistent development and production environments
+- **Docker Compose**: Tool for defining and running multi-container applications
+
+#### Testing Frameworks:
+- **Jest**: JavaScript testing framework for unit and integration tests
+- **Supertest**: Library for testing HTTP servers and APIs
+- **Cypress**: End-to-end testing framework for browser testing
+
+#### Deployment Platforms:
+- **Heroku**: Platform as a Service (PaaS) for application deployment
+- **Vercel**: Platform for frontend deployment and serverless functions
+- **Netlify**: All-in-one platform for deploying web projects
+
+#### Monitoring & Notifications:
+- **Slack/Discord Integration**: Automated notifications for build status and deployments
+- **Email Alerts**: Notifications for failed builds or successful deployments
+
+### Sample CI/CD Workflow
+1. **Code Commit**: Developer pushes code to feature branch
+2. **Automated Build**: GitHub Actions triggers build process
+3. **Testing Phase**: Runs unit tests, integration tests, and linting
+4. **Security Scan**: Checks for vulnerabilities in dependencies
+5. **Docker Image Build**: Creates container image if tests pass
+6. **Deployment to Staging**: Automatically deploys to staging environment
+7. **Manual Approval**: Team review and approval for production deployment
+8. **Production Deployment**: Automated deployment to live environment
+9. **Post-Deployment Tests**: Verification that deployment was successful
+
 ## Getting Started
 (Instructions will be added as the project progresses)
