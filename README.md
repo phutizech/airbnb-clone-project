@@ -145,5 +145,37 @@ This project is a full-stack web application that replicates the core functional
 - **One-to-One**: Booking → Payment, Booking → Review
 - **Many-to-Many**: Properties ↔ Amenities
 
+## Feature Breakdown
+
+### 1. User Management
+This feature handles user registration, authentication, and profile management. It enables secure access to the platform through login/logout functionality and allows users to manage their personal information and preferences.
+
+### 2. Property Management
+This feature allows hosts to create, edit, and manage property listings with detailed descriptions, photos, and amenities. It provides the foundation for the marketplace by enabling property owners to showcase their spaces to potential guests.
+
+### 3. Booking System
+This feature enables guests to search for properties, check availability, and make reservations. It handles the entire booking lifecycle from inquiry to confirmation, including date selection and pricing calculations.
+
+### 4. Review and Rating System
+This feature allows guests to leave reviews and ratings for properties they've stayed at, and hosts to review guests. It builds trust within the community by providing authentic feedback and helping users make informed decisions.
+
+### 5. Search and Filtering
+This feature provides advanced search capabilities with filters for location, price range, dates, amenities, and property types. It enhances user experience by helping guests quickly find properties that match their specific requirements.
+
+### 6. Payment Processing
+This feature integrates secure payment gateways to handle transactions, refunds, and financial operations. It ensures safe and reliable monetary exchanges between guests and hosts while maintaining PCI compliance.
+
+### 7. Messaging System
+This feature enables communication between guests and hosts before, during, and after bookings. It facilitates coordination for check-in details, questions about the property, and general inquiries.
+
+### 8. Admin Dashboard
+This feature provides administrative tools for monitoring platform activity, managing users, resolving disputes, and maintaining overall system health. It ensures smooth operation and moderation of the entire platform.
+
+### 9. Responsive Design
+This feature ensures the application works seamlessly across various devices including desktops, tablets, and smartphones. It provides an optimal user experience regardless of how users access the platform.
+
+### 10. Notification System
+This feature sends email and in-app notifications for booking confirmations, messages, reminders, and updates. It keeps users informed about important activities and changes related to their account.
+
 ## Getting Started
 (Instructions will be added as the project progresses)
