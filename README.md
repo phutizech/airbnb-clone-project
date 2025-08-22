@@ -11,7 +11,7 @@ This project is a full-stack web application that replicates the core functional
 - Develop a robust backend with proper database management
 - Learn and apply modern web development technologies
 
-## Tech Stack
+## Tech Stack(Brief overview)
 - **Frontend**: React.js, HTML5, CSS3, JavaScript (ES6+)
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB/Mongoose
@@ -26,9 +26,6 @@ This project is a full-stack web application that replicates the core functional
 - Booking system
 - Reviews and ratings
 - Responsive design
-
-## Getting Started
-(Instructions will be added as the project progresses)
 
 ## Team Roles
 
@@ -56,3 +53,6 @@ This project is a full-stack web application that replicates the core functional
 | **JWT** | Secure user authentication and authorization |
 | **HTML5/CSS3** | Structure and styling of web pages |
 | **Git/GitHub** | Version control and collaboration platform |
+
+## Getting Started
+(Instructions will be added as the project progresses)
