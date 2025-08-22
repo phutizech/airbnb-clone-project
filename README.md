@@ -177,5 +177,61 @@ This feature ensures the application works seamlessly across various devices inc
 ### 10. Notification System
 This feature sends email and in-app notifications for booking confirmations, messages, reminders, and updates. It keeps users informed about important activities and changes related to their account.
 
+## API Security
+
+### Key Security Measures
+
+#### 1. Authentication
+**Implementation**: JSON Web Tokens (JWT) with secure token storage and refresh token rotation
+**Purpose**: Ensures only verified users can access protected endpoints by validating user identity through encrypted tokens
+
+#### 2. Authorization
+**Implementation**: Role-based access control (RBAC) with middleware validation
+**Purpose**: Restricts user actions based on their roles (guest, host, admin) to prevent unauthorized access to sensitive operations
+
+#### 3. Rate Limiting
+**Implementation**: Express-rate-limit middleware with IP-based and user-based throttling
+**Purpose**: Prevents brute force attacks, DDoS attempts, and API abuse by limiting requests per time window
+
+#### 4. Input Validation & Sanitization
+**Implementation**: Joi validation schemas and express-validator middleware
+**Purpose**: Protects against SQL injection, XSS attacks, and malformed data by validating and cleaning all incoming requests
+
+#### 5. HTTPS & SSL/TLS Encryption
+**Implementation**: SSL certificates and forced HTTPS redirects
+**Purpose**: Encrypts data in transit between client and server to prevent eavesdropping and man-in-the-middle attacks
+
+#### 6. CORS Configuration
+**Implementation**: Proper Cross-Origin Resource Sharing settings with whitelisted domains
+**Purpose**: Controls which external domains can access the API to prevent unauthorized cross-site requests
+
+#### 7. Helmet.js Security Headers
+**Implementation**: Helmet middleware for setting security-related HTTP headers
+**Purpose**: Protects against common web vulnerabilities by setting appropriate security headers
+
+### Security Importance by Area
+
+#### User Data Protection
+**Why crucial**: Personal information, payment details, and identification documents must be protected to prevent identity theft, comply with GDPR/CCPA regulations, and maintain user trust.
+
+#### Payment Processing Security
+**Why crucial**: Financial transactions require PCI DSS compliance to prevent fraud, protect credit card information, and ensure secure monetary transfers between parties.
+
+#### Property Management Security
+**Why crucial**: Hosts' property information, availability calendars, and pricing data must be secured to prevent unauthorized modifications and protect business operations.
+
+#### Booking System Integrity
+**Why crucial**: Booking records and reservation details must be protected against tampering to maintain transaction integrity and prevent fraudulent activities.
+
+#### Review System Authenticity
+**Why crucial**: Review data must be secured to prevent fake reviews, maintain platform credibility, and ensure genuine user feedback.
+
+### Additional Security Practices
+- **Regular security audits** and penetration testing
+- **Dependency vulnerability scanning** with npm audit
+- **Environment variable protection** for sensitive credentials
+- **Database encryption** at rest and in transit
+- **API key rotation** and secure storage
+
 ## Getting Started
 (Instructions will be added as the project progresses)
